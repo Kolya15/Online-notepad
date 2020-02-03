@@ -5,23 +5,17 @@ let note = {
 };
 
 let textNote = document.querySelector('.note');
+let note1;
 function saveNote(){
     note.text = textNote.value;
     note.date = nowDate.toLocaleString();
-    console.log(note);
     localStorage.setItem ("note", JSON.stringify(note));
-    // note1 = JSON.parse (localStorage.getItem ("note"));
-    // console.log(note1);
-};
-
-window.onunload = function saveNote1(){
-    note.text = "Helo!2";
-    note.date = nowDate.toLocaleString();
-    console.log(note);
-    localStorage.setItem ("note", JSON.stringify(note));
+    note1 = JSON.parse (localStorage.getItem ("note"));
+    console.log(note1);
 };
 
 
+window.onbeforeunload = function saveNote1(){
 
-
+};
 
